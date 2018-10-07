@@ -1,23 +1,24 @@
 using namespace std;
-#include <iostream>
 
-void startGame(){
+#include <iostream>
+#include <cstdlib>
+#include "MenuScreen.h"
+
+int main ( int argc, char** argv ){
 
 	system("clear");
-	cout << "> New Game" << endl;
+	cout << "New Game" << endl << endl;
 
-}
+	MenuScreen test = MenuScreen();
+	test.setDesc("Choisir :");
+	test.addOption("Jouer");
+	test.addOption("Options");
+	test.addOption("Crédits");
+	test.addOption("Quitter");
+	test.printDesc();
+	test.printOptions();
 
-void quitGame(){
-
-	cout << "> Quit Game" << endl;
-
-}
-
-int main(int argc, char** argv){
-
-	startGame();
-	quitGame();
+	cout << "Quit Game" << endl;
 
 	return EXIT_SUCCESS;
 }
