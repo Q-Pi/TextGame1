@@ -7,13 +7,15 @@ using namespace std;
 
 /* Private Methods : */
 
-void MenuScreen::printDesc (){
+void MenuScreen::printDesc ()
+{
 
 	cout << desc << endl;
 
 }
 
-void MenuScreen::printOptions (){
+void MenuScreen::printOptions ()
+{
 
 	for( int i = 0 ; i < nbOptions ; i++ ){
 		if( i == cursor )
@@ -26,7 +28,8 @@ void MenuScreen::printOptions (){
 
 }
 
-void MenuScreen::cursorUp (){
+void MenuScreen::cursorUp ()
+{
 
 	if( cursor )
 		cursor--;
@@ -35,7 +38,8 @@ void MenuScreen::cursorUp (){
 
 }
 
-void MenuScreen::cursorDown (){
+void MenuScreen::cursorDown ()
+{
 
 	if( cursor < nbOptions-1 )
 		cursor++;
@@ -47,7 +51,8 @@ void MenuScreen::cursorDown (){
 
 /* Public Methods : */
 
-MenuScreen::MenuScreen (): nbOptions(0), cursor(0){}
+MenuScreen::MenuScreen (): nbOptions(0), cursor(0)
+{}
 
 void MenuScreen::setDesc ( const string txt ){
 
@@ -55,13 +60,15 @@ void MenuScreen::setDesc ( const string txt ){
 
 }
 
-void MenuScreen::addDescLine ( const string txt ){
+void MenuScreen::addDescLine ( const string txt )
+{
 
 	desc += txt + "\n";
 
 }
 
-void MenuScreen::addOption ( string txt /* , pointeur_sur_fonction (void * ?) action */){
+void MenuScreen::addOption ( string txt /* , pointeur_sur_fonction (void * ?) action */)
+{
 	
 	options[nbOptions] = txt;
 	/*actions[nbOptions] = action;*/
@@ -69,7 +76,8 @@ void MenuScreen::addOption ( string txt /* , pointeur_sur_fonction (void * ?) ac
 
 }
 
-void MenuScreen::run(){
+void MenuScreen::run()
+{
 	/*while(!enter){
 		printDesc();
 		printOptions();

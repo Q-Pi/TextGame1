@@ -3,20 +3,18 @@ using namespace std;
 #include <iostream>
 #include <cstdlib>
 #include "MenuScreen.h"
+#include "Person.h"
 
-int main ( int argc, char** argv ){
+int main ( int argc, char** argv )
+{
 
 	system("clear");
 	cout << "New Game" << endl << endl;
 
-	MenuScreen test = MenuScreen();
-	test.setDesc("Choisir :");
-	test.addOption("Jouer");
-	test.addOption("Options");
-	test.addOption("Crédits");
-	test.addOption("Quitter");
-	test.printDesc();
-	test.printOptions();
+	Person player;
+	player.init();
+	player.render();
+	player.print();
 
 	cout << "Quit Game" << endl;
 
