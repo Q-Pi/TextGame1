@@ -7,14 +7,14 @@ clean:
 	@-rm $(main)
 	@-rm *.o
 
-build: main.o MenuScreen.o Person.o
-	@g++ $(main).o MenuScreen.o Person.o -o $(main)
+build: main.o Game.o Person.o
+	@g++ $(main).o Game.o Person.o -o $(main)
 
 main.o:
 	@g++ $(main).cpp -c
 
-MenuScreen.o:
-	@g++ MenuScreen.cpp -c
+Game.o:
+	@g++ Game.cpp -c
 
 Person.o:
 	@g++ Person.cpp -c

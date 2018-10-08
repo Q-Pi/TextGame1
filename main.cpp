@@ -2,21 +2,25 @@ using namespace std;
 
 #include <iostream>
 #include <cstdlib>
-#include "MenuScreen.h"
-#include "Person.h"
+#include "Game.h"
 
 int main ( int argc, char** argv )
 {
+	int i = 0;
 
-	system("clear");
-	cout << "New Game" << endl << endl;
+	Game game;
+	game.init();
 
-	Person player;
-	player.init();
-	player.render();
-	player.print();
+	while(game.isRunning() && i<1000)
+	{
+		game.handleInput();
+		game.update();
+		game.render();
+		game.print();
+		i++;
+	}
 
-	cout << "Quit Game" << endl;
+	game.clean();
 
 	return EXIT_SUCCESS;
 }
