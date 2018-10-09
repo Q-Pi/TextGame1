@@ -4,6 +4,7 @@ using namespace std;
 #include <cstdlib>
 #include "SDL2/SDL.h"
 #include "Game.h"
+#include "Room.h"
 
 int main ( int argc, char** argv )
 {
