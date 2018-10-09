@@ -7,9 +7,9 @@ clean:
 	@-rm $(main)
 	@-rm *.o
 
-build: main.o Game.o Person.o Map.o
-	@g++ $(main).o Game.o Person.o Map.o -o $(main)
-
+build: main.o Game.o Person.o Map.o Tile.o GroundTile.o WallTile.o DoorTile.o
+	@g++ $(main).o Game.o Person.o Map.o Tile.o GroundTile.o WallTile.o DoorTile.o -o $(main)
+	
 main.o:
 	@g++ $(main).cpp -c
 
@@ -21,6 +21,18 @@ Person.o:
 
 Map.o:
 	@g++ Map.cpp -c
+
+Tile.o:
+	@g++ Tile.cpp -c
+
+WallTile.o:
+	@g++ WallTile.cpp -c
+
+GroundTile.o:
+	@g++ GroundTile.cpp -c
+
+DoorTile.o:
+	@g++ DoorTile.cpp -c
 
 run:
 	@./$(main)

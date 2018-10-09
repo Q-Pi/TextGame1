@@ -1,6 +1,7 @@
 using namespace std;
 
 #include "Map.h"
+#include <iostream>
 
 Map::Map ( Person p ): w(0), h(0), x(0), y(0), strGrid(""), player(p)
 {}
@@ -8,7 +9,7 @@ Map::Map ( Person p ): w(0), h(0), x(0), y(0), strGrid(""), player(p)
 Map::~Map ()
 {
 	for( int y = 0; y < h; y++)
-		delete[] grid[y]	
+		delete[] grid[y];	
 	delete[] grid;
 }
 
@@ -34,11 +35,11 @@ void Map::load ( string path )
 		{
 			switch(line[x])
 			{
-				case '0': grid[y][x] = GroundTile;
+				case '0': grid[y][x] = GroundTile();
 				break;
-				case '1': grid[y][x] = WallTile;
+				case '1': grid[y][x] = WallTile();
 				break;
-				case 'd': grid[y][x] = DoorTile;
+				case 'd': grid[y][x] = DoorTile();
 			}
 		}
 	}
@@ -53,7 +54,7 @@ void Map::render ()
 	for( int y = 0; y < h; y++)
 	{
 		for( int x = 0; x < w; x++)
-			strGrid += grid[y][x];
+			strGrid += grid[y][x].getChr();
 		strGrid += '\n';
 	}
 }

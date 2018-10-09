@@ -4,6 +4,11 @@
 using namespace std;
 
 #include <cstring>
+#include "Tile.h"
+#include "GroundTile.h"
+#include "WallTile.h"
+#include "DoorTile.h"
+#include "Person.h"
 
 class Map
 {
@@ -20,7 +25,7 @@ private:
 		//PNJ
 
 public:
-	Map ();
+	Map ( Person );
 	~Map ();
 
 	void load ( string );

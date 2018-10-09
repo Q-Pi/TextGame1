@@ -2,13 +2,12 @@ using namespace std;
 
 #include <iostream>
 #include <cstdlib>
-#include "SDL2/SDL.h"
+//#include "SDL2/SDL.h"
 #include "Game.h"
-#include "Room.h"
 
 int main ( int argc, char** argv )
 {
-	SDL_Init( SDL_INIT_VIDEO );
+	//SDL_Init( SDL_INIT_VIDEO );
 
 	int i = 0;
 
@@ -26,7 +25,7 @@ int main ( int argc, char** argv )
 
 	game.clean();
 
-	SDL_Quit();
+	//SDL_Quit();
 
 	return EXIT_SUCCESS;
 }

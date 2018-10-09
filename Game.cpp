@@ -3,7 +3,7 @@ using namespace std;
 #include "Game.h"
 #include <iostream>
 
-Game::Game (): running(true),
+Game::Game (): running(true), map(player)
 {
 	system("clear");
 	cout << "New Game" << endl << endl;
