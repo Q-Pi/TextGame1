@@ -7,8 +7,8 @@ clean:
 	@-rm $(main)
 	@-rm *.o
 
-build: main.o Game.o Person.o
-	@g++ $(main).o Game.o Person.o -o $(main)
+build: main.o Game.o Person.o Room.o
+	@g++ $(main).o Game.o Person.o Room.o -o $(main)
 
 main.o:
 	@g++ $(main).cpp -c
@@ -18,6 +18,9 @@ Game.o:
 
 Person.o:
 	@g++ Person.cpp -c
+
+Room.o:
+	@g++ Room.cpp -c
 
 run:
 	@./$(main)

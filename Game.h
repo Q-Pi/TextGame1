@@ -10,6 +10,7 @@ class Game
 private:
 	bool running;
 	Person player;
+	Map map;
 
 public:
 	Game ();

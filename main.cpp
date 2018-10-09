@@ -3,6 +3,7 @@ using namespace std;
 #include <iostream>
 #include <cstdlib>
 #include "Game.h"
+#include "Room.h"
 
 int main ( int argc, char** argv )
 {
