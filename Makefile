@@ -8,7 +8,7 @@ clean:
 	@-rm *.o
 
 build: main.o Game.o Person.o
-	@g++ $(main).o Game.o Person.o -o $(main)
+	@g++ $(main).o Game.o Person.o -o $(main) -lSDL2
 
 main.o:
 	@g++ $(main).cpp -c
