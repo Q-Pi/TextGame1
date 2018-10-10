@@ -5,5 +5,8 @@ using namespace std;
 Tile::Tile ()
 {}
 
+Tile::Tile ( char sp ): sprite ( sp )
+{}
+
 Tile::~Tile ()
 {}

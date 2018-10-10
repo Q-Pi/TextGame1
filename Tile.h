@@ -5,13 +5,14 @@ using namespace std;
 
 class Tile
 {
-private:
+protected:
 	//Sprite sprite;
 	//Sprite element;
 	char sprite;
 
 public:
 	Tile ();
+	Tile ( char );
 	~Tile ();
 	char getChr ()
 	{

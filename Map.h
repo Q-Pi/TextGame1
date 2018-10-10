@@ -18,6 +18,7 @@ private:
 	Tile** grid;
 	string strGrid;
 	Person& player;
+	//Connections
 	//Elements
 		//Containers
 		//Objects

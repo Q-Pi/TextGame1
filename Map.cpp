@@ -2,6 +2,7 @@ using namespace std;
 
 #include "Map.h"
 #include <iostream>
+#include <fstream>
 
 Map::Map ( Person p ): w(0), h(0), x(0), y(0), strGrid(""), player(p)
 {}
@@ -15,22 +16,29 @@ Map::~Map ()
 
 void Map::load ( string path )
 {
-	//open file
-	//read WIDTH = w
-	//read HEIGHT = h
-	//read CONNECTION = link
+	string line;
+	ifstream mapFile ( path );
+
+	if(!mapFile.is_open())
+	{
+		cout << "Unabale to open: " << path << endl;
+		exit(1);
+	}
+
+	mapFile >> w;
+	mapFile >> h;
+	int link;
+	mapFile >> link;
 
 	grid = new Tile*[h];
-	for( int y = 0; y < h; y++)
+	for( int y = 0; y < h; y++ )
 	{
 		grid[y] = new Tile[w];
 	}
 
-	char* line = new char[w];
-
-	for( int y = 0; y < h; y++)
+	for( int y = 0; y < h; y++ )
 	{
-		//readLine to line
+		mapFile >> line;
 		for( int x = 0; x < w; x++)
 		{
 			switch(line[x])
@@ -40,12 +48,14 @@ void Map::load ( string path )
 				case '1': grid[y][x] = WallTile();
 				break;
 				case 'd': grid[y][x] = DoorTile();
+				break;
+				case 'p': grid[y][x] = GroundTile();
 			}
 		}
 	}
 
-	delete[] line;
-
+	mapFile.close();
+	cout << "Load correcly." << endl;
 }
 
 void Map::render ()
