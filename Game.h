@@ -10,8 +10,14 @@ class Game
 {
 private:
 	bool running;
+	bool playerTurn;
 	Person player;
 	Map map;
+	Person* units;
+	int nbUnits;
+
+	bool noCollision (const int&, const int& );
+	bool correctMove ( int, int );
 
 public:
 	Game ();
@@ -23,8 +29,15 @@ public:
 	void render ();
 	void print ();
 	void clean ();
+	void newTurn ();
 
 	bool isRunning (){return running;}
+	bool isPlayerTurn(){return playerTurn;}
+
+	void moveUp( Person& );
+	void moveLeft( Person& );
+	void moveDown( Person& );
+	void moveRight( Person& );
 
 };
 

@@ -3,21 +3,20 @@
 
 using namespace std;
 
+#include "Person.h"
+
 class Tile
 {
 protected:
-	//Sprite sprite;
-	//Sprite element;
 	char sprite;
+	bool walkable;
 
 public:
 	Tile ();
-	Tile ( char );
+	Tile ( char, bool );
 	~Tile ();
-	char getChr ()
-	{
-		return sprite;
-	}
+	char getSprite ();
+	bool isWalkable () {return walkable;}
 };
 
 #endif

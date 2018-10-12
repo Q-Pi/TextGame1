@@ -15,7 +15,7 @@ class Map
 private:
 	int w, h;
 	int x, y;
-	Tile** grid;
+	Tile*** grid;
 	string strGrid;
 	Person& player;
 	//Connections
@@ -26,12 +26,14 @@ private:
 		//PNJ
 
 public:
-	Map ( Person );
+	Map ( Person& );
 	~Map ();
 
 	void load ( string );
 	void render ();
 	void print ();
+
+	Tile* get ( int, int );
 };
 
 #endif

@@ -8,8 +8,6 @@ using namespace std;
 class DoorTile : public Tile
 {
 private:
-	//Sprite sprite;
-	//Sprite element;
 
 public:
 	DoorTile ();

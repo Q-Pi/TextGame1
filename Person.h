@@ -22,14 +22,25 @@ private:
 	int apMax;
 	int level;
 	string info;
+	int x;
+	int y;
+	char sprite;
 
 public:
 	Person ();
 	~Person ();
 
 	void init ();
+	void spawn ( int, int );
 	void render ();
 	void print ();
+	void translateTo ( int, int );
+	void newTurn ();
+
+	int getMp () {return mp;}
+	int getX () {return x;}
+	int getY () {return y;}
+	char getSprite () {return sprite;}
 
 };
 

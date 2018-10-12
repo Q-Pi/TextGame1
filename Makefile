@@ -8,7 +8,7 @@ clean:
 	@-rm *.o
 
 build: main.o Game.o Person.o Map.o Tile.o GroundTile.o WallTile.o DoorTile.o
-	@g++ $(main).o Game.o Person.o Map.o Tile.o GroundTile.o WallTile.o DoorTile.o -o $(main)
+	@g++ $(main).o Game.o Person.o Map.o Tile.o GroundTile.o WallTile.o DoorTile.o -o $(main) `sdl2-config --cflags --libs`
 	
 main.o:
 	@g++ $(main).cpp -c

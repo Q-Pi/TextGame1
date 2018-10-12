@@ -5,8 +5,13 @@ using namespace std;
 Tile::Tile ()
 {}
 
-Tile::Tile ( char sp ): sprite ( sp )
+Tile::Tile ( char sp, bool wlk ): sprite ( sp ), walkable( wlk )
 {}
 
 Tile::~Tile ()
 {}
+
+char Tile::getSprite ()
+{
+	return sprite;
+}
